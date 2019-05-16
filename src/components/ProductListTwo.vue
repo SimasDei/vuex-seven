@@ -2,7 +2,7 @@
   <div class="product-list-two">
     <h2>Product List two</h2>
     <ul>
-      <li v-for="(product, index) in products" :key="index">
+      <li v-for="(product, index) in saleProducts" :key="index">
         <span class="name">{{product.name}}</span>
         <span class="price">{{product.price}} coins</span>
       </li>
@@ -10,9 +10,13 @@
   </div>
 </template>
 <script>
+import { mapGetters } from 'vuex';
+
 export default {
   name: 'ProductListTwo',
-  props: ['products'],
+  computed: {
+    ...mapGetters(['products', 'saleProducts']),
+  },
 };
 </script>
 <style lang="scss" scoped>
