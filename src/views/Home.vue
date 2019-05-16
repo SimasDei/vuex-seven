@@ -1,13 +1,20 @@
 <template>
-  <div class="home">
-    <product-list-one></product-list-one>
-    <product-list-two></product-list-two>
+  <div class="home container">
+    <product-list-one :products="products"></product-list-one>
+    <product-list-two :products="products"></product-list-two>
   </div>
 </template>
 
 <script>
+import ProductListOne from '@/components/ProductListOne.vue';
+import ProductListTwo from '@/components/ProductListTwo.vue';
+
 export default {
   name: 'home',
+  components: {
+    ProductListOne,
+    ProductListTwo,
+  },
   data() {
     return {
       products: [
